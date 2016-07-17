@@ -1,7 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+fever = OrderSetItem.create!(name: "Treatment for Fever", description: "Generally indicates a need for investigation")
+  physician = OrderSetItem.create!(name: "Physician visit", description: "Physician needs to document the symptoms and patient complaints", parent_id: fever.id)
+  lab = OrderSetItem.create!(name: "Lab work", description: "Blood and urine tests for diagnosis", parent_id: fever.id)
+    blood = OrderSetItem.create!(name: "Blood work", description: "Various blood tests", parent_id: lab.id)
+    cbc = OrderSetItem.create!(name: "CBC", description: "Complete blood count", parent_id: blood.id)
+    rbc = OrderSetItem.create!(name: "RBC", description: "Red blood cound", parent_id: lab.id)

@@ -2,7 +2,7 @@ module Api
   module V1
     class OrderSetItemsController < ApplicationController
       def index
-        @order_set_items = OrderSetItem.all.page(page).per(per_page)
+        @order_set_items = OrderSetItem.page(page).per(per_page)
       end
 
       def show

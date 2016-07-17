@@ -16,25 +16,21 @@
 
   2. Create an OrderSetItem
 
-  curl -v -X POST -d  '{"order_set_item": {"name": "Asthma", "description": "Can cause life threatening conditions unless treated immediately"}}' "http://localhost:3000/api/v1/order_set_items" -H 'Content-Type: application/json' -u admin
-
-  3. Update an OrderSetItem
-
-  curl -v -X PATCH -d  '{"order_set_item": {"description": "Needs to be under supervision"}}' "http://localhost:3000/api/v1/order_set_items/16" -H 'Content-Type: application/json' -u admin | jq "."
+  curl -v -X POST -d  '{"order_set_item": {"name": "Asthma", "description": "Can cause life threatening conditions unless treated immediately"}}' "http://admin:admin@localhost:3000/api/v1/order_set_items" -H 'Content-Type: application/json'
 
   4. Get a single OrderSetItem
 
   curl http://localhost:3000/api/v1/order_set_items/16 | jq "."
 
   4. Delete an OrderSetItem
-  curl -v -X DELETE http://localhost:3000/api/v1/order_set_items/1 -u admin
+  curl -v -X DELETE http://admin:admin@localhost:3000/api/v1/order_set_items/1
 
   5. Error conditions
   Not found
   curl -v http://localhost:3000/api/v1/order_set_items/999
 
   Invalid
-  curl -v -X POST -d  '{"order_set_item": {"description": "Can cause life threatening conditions unless treated immediately"}}' "http://localhost:3000/api/v1/order_set_items" -H 'Content-Type: application/json' -u admin | jq "."
+  curl -v -X POST -d  '{"order_set_item": {"description": "Can cause life threatening conditions unless treated immediately"}}' "http://admin:admin@localhost:3000/api/v1/order_set_items" -H 'Content-Type: application/json' | jq "."
 
 ```
 
