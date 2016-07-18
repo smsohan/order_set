@@ -1,0 +1,46 @@
+curl -x 'http://localhost:9080' -H "x-spy-rest-desc: Create  new Pet" -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{
+  "id": 0,
+  "category": {
+    "id": 0,
+    "name": "string"
+  },
+  "name": "doggie",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": "string"
+    }
+  ],
+  "status": "available"
+}' 'http://petstore.swagger.io/v2/pet'
+
+
+curl -x 'http://localhost:9080' -H "x-spy-rest-desc: Get a Pet" -X GET --header 'Accept: application/json' 'http://p
+
+
+curl -X GET --header 'Accept: application/json' 'http://petstore.swagger.io/v2/store/order/0'etstore.swagger.io/v2/pet/8400394378784896000'
+
+
+curl -x 'http://localhost:9080' -H "x-spy-rest-desc: Get store inventory" -X GET --header 'Accept: application/json' 'http://petstore.swagger.io/v2/store/inventory'
+
+
+curl -x 'http://localhost:9080' -H "x-spy-rest-desc: Put an order" -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{
+  "id": 0,
+  "petId": 0,
+  "quantity": 0,
+  "shipDate": "2016-07-18T01:07:09.655Z",
+  "status": "placed",
+  "complete": false
+}' 'http://petstore.swagger.io/v2/store/order'
+
+
+curl -x 'http://localhost:9080' -H "x-spy-rest-desc: Get the details of an order" -X GET --header 'Accept: application/json' 'http://petstore.swagger.io/v2/store/order/0'
+
+
+curl -x 'http://localhost:9080' -H "x-spy-rest-desc: Login as a user" -X GET --header 'Accept: application/json' 'http://petstore.swagger.io/v2/user/login?username=admin&password=admin'
+
+
+curl -x 'http://localhost:9080' -H 'x-spy-rest-resource: user' -H "x-spy-rest-desc: Get the details of a user" -X GET --header 'Accept: application/json' 'http://petstore.swagger.io/v2/user/user1'

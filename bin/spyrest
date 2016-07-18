@@ -1,0 +1,37 @@
+  curl -H 'x-spy-rest-desc: Get a list of OrderSetItems' -x "http://localhost:9080" "http://localhost:3000/api/v1/order_set_items"
+
+  curl -H 'x-spy-rest-desc: Get a 2nd page of OrderSetItems' -x "http://localhost:9080" "http://localhost:3000/api/v1/order_set_items?page=2"
+
+  curl -H 'x-spy-rest-desc: Get a larger page of OrderSetItems' -x "http://localhost:9080" "http://localhost:3000/api/v1/order_set_items?per_page=10"
+
+  curl -H 'x-spy-rest-desc: Create an OrderSetItem' -x "http://localhost:9080" -v -X POST -d  '{"order_set_item": {"name": "Asthma", "description": "Can cause life threatening conditions unless treated immediately"}}' "http://admin:admin@localhost:3000/api/v1/order_set_items" -H 'Content-Type: application/json'
+
+  curl -H 'x-spy-rest-desc: Update an OrderSetItem' -x "http://localhost:9080" -v -X PATCH -d  '{"order_set_item": {"description": "Needs to be under supervision"}}' "http://admin:admin@localhost:3000/api/v1/order_set_items/20" -H 'Content-Type: application/json'
+
+  curl -H 'x-spy-rest-desc: Delete an OrderSetItem' -x "http://localhost:9080" -v -X DELETE http://admin:admin@localhost:3000/api/v1/order_set_items/16
+
+  curl -H 'x-spy-rest-desc: Returns 404 when not found' -x "http://localhost:9080" -v http://localhost:3000/api/v1/order_set_items/999
+
+  curl -H 'x-spy-rest-desc: Shows invalid error' -x "http://localhost:9080" -v -X POST -d  '{"order_set_item": {"description": "Can cause life threatening conditions unless treated immediately"}}' "http://admin:admin@localhost:3000/api/v1/order_set_items" -H 'Content-Type: application/json'
+
+  curl -H 'x-spy-rest-desc: Get a list of OrderSetItems' -x "http://localhost:9080" "http://localhost:3000/api/v2/order_set_items"
+
+  curl -H 'x-spy-rest-desc: Get a 2nd page of OrderSetItems' -x "http://localhost:9080" "http://localhost:3000/api/v2/order_set_items?page=2"
+
+  curl -H 'x-spy-rest-desc: Get a larger page of OrderSetItems' -x "http://localhost:9080" "http://localhost:3000/api/v2/order_set_items?per_page=10"
+
+  curl -H 'x-spy-rest-desc: Create an OrderSetItem' -x "http://localhost:9080" -v -X POST -d  '{"order_set_item": {"name": "Asthma", "description": "Can cause life threatening conditions unless treated immediately"}}' "http://admin:admin@localhost:3000/api/v2/order_set_items" -H 'Content-Type: application/json'
+
+  curl -H 'x-spy-rest-desc: Update an OrderSetItem' -x "http://localhost:9080" -v -X PATCH -d  '{"order_set_item": {"description": "Needs to be under supervision"}}' "http://admin:admin@localhost:3000/api/v2/order_set_items/20" -H 'Content-Type: application/json'
+
+  curl -H 'x-spy-rest-desc: Delete an OrderSetItem' -x "http://localhost:9080" -v -X DELETE http://admin:admin@localhost:3000/api/v2/order_set_items/16
+
+  curl -H 'x-spy-rest-desc: Returns 404 when not found' -x "http://localhost:9080" -v http://localhost:3000/api/v2/order_set_items/999
+
+  curl -H 'x-spy-rest-desc: Shows invalid error' -x "http://localhost:9080" -v -X POST -d  '{"order_set_item": {"description": "Can cause life threatening conditions unless treated immediately"}}' "http://admin:admin@localhost:3000/api/v2/order_set_items" -H 'Content-Type: application/json'
+
+  curl -H 'x-spy-rest-desc: Get a list of comments' -x "http://localhost:9080" "http://localhost:3000/api/v2/order_set_items/20/comments"
+
+  curl -H 'x-spy-rest-desc: Create a comment' -x "http://admin:admin@localhost:9080"-v -X POST -d  '{"comment": {"username": "David", "text": "Looks good to me"}}' "http://localhost:3000/api/v2/order_set_items/20/comments" -H 'Content-Type: application/json'
+
+  curl -H 'x-spy-rest-desc: Shows all comments for each order set item' -x "http://localhost:9080" "http://localhost:3000/api/v2/order_set_items/20?include_comments=1"
